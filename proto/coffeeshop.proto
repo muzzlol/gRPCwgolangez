@@ -1,0 +1,36 @@
+syntax = "proto 3";
+package coffeeshop;
+
+option go_package = "github.com/muzzlol/gRPCwgolangez/proto";
+
+service CoffeeShop {
+    rpc GetMenu(MenuRequest) returns (stream Menu) {}
+    rpc PlaceOrder(Order) returns (Reciept) {}
+    rpc GetOrderStatus(Reciept) returns (OrderStatus) {}
+}
+
+message MenuRequest {}
+
+message Menu {
+    Repeated Item items = 1;
+}
+
+message Item {
+    uint32 id = 1;
+    string name = 2;
+    float price = 3;
+}
+
+message Order {
+    Repeated Item items = 1;
+}
+
+message Reciept {
+    uint32 id = 1;
+    float total = 2;
+}
+
+message OrderStatus {
+    string status = 1;
+}
+
