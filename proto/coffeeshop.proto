@@ -1,4 +1,4 @@
-syntax = "proto 3";
+syntax = "proto3";
 package coffeeshop;
 
 option go_package = "github.com/muzzlol/gRPCwgolangez/proto";
@@ -12,7 +12,7 @@ service CoffeeShop {
 message MenuRequest {}
 
 message Menu {
-    Repeated Item items = 1;
+    repeated Item items = 1;
 }
 
 message Item {
@@ -22,7 +22,7 @@ message Item {
 }
 
 message Order {
-    Repeated Item items = 1;
+    repeated Item items = 1;
 }
 
 message Reciept {
